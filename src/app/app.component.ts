@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'demo';
+
+  constructor(private route:Router){
+
+  }
+
+  logOut(){
+    localStorage.removeItem('user_id')
+    localStorage.removeItem('user_role')
+    localStorage.removeItem('order_id')
+    this.route.navigate(["/login"])
+
+
+  }
 }

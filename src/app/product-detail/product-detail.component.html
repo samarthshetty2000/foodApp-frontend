@@ -1,0 +1,49 @@
+<div class="container">
+   
+    <h3>Product Details</h3>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">name</th>
+            <th scope="col">about</th>
+            <th scope="col">type</th>
+            <th scope="col">availability</th>
+            <th scope="col">price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Add item</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of products.data">
+          
+            <td>{{p.id}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.about}}</td>
+            <td>{{p.type}}</td>
+            <td>{{p.availability}}</td>
+            <td>{{p.price}}</td>
+            <!-- <td><input type="number"  ></td>
+            <td><button class="btn btn-primary" >Add item</button></td> -->
+            <td>
+            <form #loginForm="ngForm">
+                <input type="number"  ngModel 
+                id="quantity"
+                name="quantity"
+                #quantity="ngModel">
+            </form>
+          </td>
+          <td>
+            <button type="submit" (click)="addItem(quantity,p)" class="btn btn-primary">Add item</button>
+            <td></td>
+            
+          
+            <!-- <td><Button type="button" [routerLink]="['/edit-product/',r._id]">Update</Button></td> -->
+          </tr>
+          
+        </tbody>
+      </table>
+      <button (click)="order()" class="btn btn-primary">Order</button>
+      
+</div>
