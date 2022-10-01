@@ -9,7 +9,9 @@ import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { OrderComponent } from './order/order.component';
-import { CustomerDetailComponent } from './customer-detail/customer-detail.component'
+import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
+import { AddfoodprodComponent } from './addfoodprod/addfoodprod.component';
+import { EditfoodprodComponent } from './editfoodprod/editfoodprod.component'
 
 
 
@@ -20,7 +22,9 @@ import { CustomerDetailComponent } from './customer-detail/customer-detail.compo
     RegistrationComponent,
     ProductDetailComponent,
     OrderComponent,
-    CustomerDetailComponent
+    CustomerDetailComponent,
+    AddfoodprodComponent,
+    EditfoodprodComponent
   ],
   imports: [
     BrowserModule,

@@ -10,7 +10,7 @@ import { ProductService } from '../Services/product-detail/product.service';
 })
 export class ProductDetailComponent implements OnInit {
  
-
+  role=localStorage.getItem("user_role")
   products:any={}
 
 
@@ -58,6 +58,16 @@ export class ProductDetailComponent implements OnInit {
 
     });
 
+  }
+
+  deleteproduct(id:any){
+    this.productService.deleteProductdata(id).subscribe((res)=>{
+      console.log(res);
+      this.router.navigate(['products']);
+      this.productService.getproducts().subscribe((res)=>{
+        this.products=res;
+      })
+    })
   }
 
 }

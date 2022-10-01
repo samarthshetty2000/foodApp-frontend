@@ -10,6 +10,8 @@
             <th scope="col">type</th>
             <th scope="col">availability</th>
             <th scope="col">price</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
             <th scope="col">Quantity</th>
             <th scope="col">Add item</th>
 
@@ -24,6 +26,8 @@
             <td>{{p.type}}</td>
             <td>{{p.availability}}</td>
             <td>{{p.price}}</td>
+            <td><button class="btn btn-primary" type="button" [routerLink]="['/edit-product/',p.id]">Update foodproduct</button></td>
+            <td><button class="btn btn-primary" type="button" (click)="deleteproduct(p.id)">delete foodproduct</button></td>
             <!-- <td><input type="number"  ></td>
             <td><button class="btn btn-primary" >Add item</button></td> -->
             <td>
@@ -44,6 +48,7 @@
           
         </tbody>
       </table>
-      <button (click)="order()" class="btn btn-primary">Order</button>
+      <button (click)="order()" class="btn btn-primary"  *ngIf="role=='staff'">Order</button>
+      <button class="btn btn-primary" type="button" [routerLink]="['/add-product']" *ngIf="role=='manager'">add food product</button>
       
 </div>
