@@ -11,7 +11,13 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { OrderComponent } from './order/order.component';
 import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
 import { AddfoodprodComponent } from './addfoodprod/addfoodprod.component';
-import { EditfoodprodComponent } from './editfoodprod/editfoodprod.component'
+import { EditfoodprodComponent } from './editfoodprod/editfoodprod.component';
+import { FoodOrderDetailsComponent } from './food-order-details/food-order-details.component';
+import { StaffdetailComponent } from './staffdetail/staffdetail.component';
+
+import { EditstaffComponent } from './editstaff/editstaff.component';
+import { AddstaffComponent } from './addstaff/addstaff.component';
+import { SearchPipe } from './Pipes/search.pipe'
 
 
 
@@ -24,7 +30,13 @@ import { EditfoodprodComponent } from './editfoodprod/editfoodprod.component'
     OrderComponent,
     CustomerDetailComponent,
     AddfoodprodComponent,
-    EditfoodprodComponent
+    EditfoodprodComponent,
+    FoodOrderDetailsComponent,
+    StaffdetailComponent,
+
+    EditstaffComponent,
+     AddstaffComponent,
+     SearchPipe
   ],
   imports: [
     BrowserModule,

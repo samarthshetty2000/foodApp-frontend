@@ -1,14 +1,7 @@
+<div class="container">
+<h3>Edit Food</h3>
 <form #editproduct="ngForm" (ngSubmit)="editprod(editproduct)">
-    <div class="form-group">
-      <input type="text" 
-      class="form-control" 
-      ngModel
-      id="about"
-      name="about"
-      #about="ngModel"
-      [(ngModel)]="selsectedprod.about"
-      >
-    </div>
+  
     <div class="form-group">
       <input type="text" 
       class="form-control" 
@@ -17,7 +10,30 @@
       name="id"
       #id="ngModel"
       [(ngModel)]="selsectedprod.id"
+   
       >
+    </div>
+    <div class="form-group">
+      <input type="text" 
+      class="form-control" 
+      ngModel
+      id="name"
+      name="name"
+      #name="ngModel"
+      [(ngModel)]="selsectedprod.name"
+      >
+    </div>
+
+      <div class="form-group">
+        <input type="text" 
+        class="form-control" 
+        ngModel
+        id="about"
+        name="about"
+        #about="ngModel"
+        [(ngModel)]="selsectedprod.about"
+        >
+     
     </div>
     <div class="form-group">
         <input type="text" 
@@ -29,16 +45,7 @@
         [(ngModel)]="selsectedprod.availability"
         >
       </div>
-      <div class="form-group">
-        <input type="text" 
-        class="form-control" 
-        ngModel
-        id="name"
-        name="name"
-        #name="ngModel"
-        [(ngModel)]="selsectedprod.name"
-        >
-      </div>
+     
       <div class="form-group">
         <input type="number" 
         class="form-control" 
@@ -59,7 +66,7 @@
         [(ngModel)]="selsectedprod.type"
         >
       </div>
-      <div class="form-group">
+      <!-- <div class="form-group">
         <input type="number" 
         class="form-control" 
         ngModel
@@ -68,6 +75,7 @@
         #menu_id="ngModel"
         [(ngModel)]="selsectedprod.menu_id"
         >
-      </div>
+      </div> -->
       <button type="submit" class="btn btn-primary">Submit</button>
   </form>
+</div>

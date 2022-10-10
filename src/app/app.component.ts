@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'demo';
+  role=localStorage.getItem("user_role")
 
   constructor(private route:Router){
 

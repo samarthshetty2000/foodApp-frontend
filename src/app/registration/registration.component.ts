@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { throws } from 'assert';
 import { LoginserviceService } from '../Services/login/loginservice.service';
 
 @Component({
@@ -9,7 +11,7 @@ import { LoginserviceService } from '../Services/login/loginservice.service';
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor(private registor:LoginserviceService) { }
+  constructor(private registor:LoginserviceService,private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -18,6 +20,7 @@ export class RegistrationComponent implements OnInit {
     console.log(form.value)
     this.registor.register(form.value).subscribe((res)=>{
       console.log(res)
+      this.router.navigate(["/login"])
     
     })
   }

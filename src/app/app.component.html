@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="#">Food app</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -16,11 +16,18 @@
         <a class="nav-link" href="#" routerLink="login">Login</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="#" routerLink="/staff-detail" >Staff Details</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="#" routerLink="reg">Register</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#" routerLink="products">Food Products</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" routerLink="foododerdetails">Food order details</a>
+      </li>
+
           <li class="nav-item">
         <button class="btn btn-secondary" (click)="logOut()">Logout</button>
       </li>
@@ -28,10 +35,10 @@
      
      
     </ul>
-    <form class="form-inline my-2 my-lg-0">
+    <!-- <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"   >
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    </form> -->
   </div>
 </nav>
 <router-outlet></router-outlet>

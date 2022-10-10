@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { OrderService } from '../Services/order/order.service';
 import { ProductService } from '../Services/product-detail/product.service';
 
+
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
@@ -12,10 +13,11 @@ export class ProductDetailComponent implements OnInit {
  
   role=localStorage.getItem("user_role")
   products:any={}
-
+  totalPrice:any=0
 
   itemList:any=[]
-
+  
+  searchProduct:any=""
 
   orderDetails:any={"user":{"id":localStorage.getItem("user_id")}}
  
@@ -34,14 +36,17 @@ export class ProductDetailComponent implements OnInit {
     })
   }
 
-  addItem(quantity:any,product:any){
+  addItem(form:any,product:any){
     const tempProduct={
       ...product
     }
     delete tempProduct.id
-    console.log(tempProduct)
+    console.log("heollp")
    
-    tempProduct.quantity=quantity.value
+   console.log(form)
+     tempProduct.quantity=form.value.quantity
+    
+    this.totalPrice+=product.price*form.value.quantity
     this.itemList.push(tempProduct)
   
   }
@@ -49,6 +54,8 @@ export class ProductDetailComponent implements OnInit {
   order(){
     console.log(this.itemList)
     this.orderDetails.item=this.itemList
+    this.orderDetails.status="pending"
+    this.orderDetails.totalPrice=this.totalPrice
     console.log(this.orderDetails)
     this.orderService.addOrder(this.orderDetails).subscribe((res)=>{
       console.log(res)
@@ -61,6 +68,9 @@ export class ProductDetailComponent implements OnInit {
   }
 
   deleteproduct(id:any){
+
+    let result = confirm("Are you sure!");
+    if(result){
     this.productService.deleteProductdata(id).subscribe((res)=>{
       console.log(res);
       this.router.navigate(['products']);
@@ -68,6 +78,8 @@ export class ProductDetailComponent implements OnInit {
         this.products=res;
       })
     })
+
+  }
   }
 
 }
